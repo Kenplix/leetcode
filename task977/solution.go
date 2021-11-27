@@ -37,7 +37,7 @@ func sortedSquares(nums []int) []int {
 	return output
 }
 
-func testcaseGenerator(minNumsLen, maxNumsLen, minNumValue, maxNumValue int) []int {
+func genTestCase(minNumsLen, maxNumsLen, minNumValue, maxNumValue int) []int {
 	nums := make([]int, helpers.RandIntInRange(minNumsLen, maxNumsLen))
 	for idx := 0; idx < len(nums); idx++ {
 		nums[idx] = helpers.RandIntInRange(minNumValue, maxNumValue)
@@ -49,10 +49,7 @@ func testcaseGenerator(minNumsLen, maxNumsLen, minNumValue, maxNumValue int) []i
 
 func main() {
 	rand.Seed(time.Now().UnixNano())
-	fmt.Println("result:", sortedSquares([]int{}))
-	fmt.Println("result:", sortedSquares([]int{-7}))
-	fmt.Println("result:", sortedSquares([]int{-7, 11}))
 	fmt.Println("result:", sortedSquares([]int{-7, -3, 2, 3, 11}))
 	fmt.Println("result:", sortedSquares([]int{-4, -1, 0, 3, 10}))
-	fmt.Println("result:", sortedSquares(testcaseGenerator(10, 10, -10, 10)))
+	fmt.Println("result:", sortedSquares(genTestCase(10, 10, -10, 10)))
 }

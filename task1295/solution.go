@@ -33,7 +33,7 @@ func findNumbers(nums []int) int {
 	return res
 }
 
-func testcaseGenerator(minNumsLen, maxNumsLen, minNumValue, maxNumValue int) []int {
+func genTestCase(minNumsLen, maxNumsLen, minNumValue, maxNumValue int) []int {
 	nums := make([]int, helpers.RandIntInRange(minNumsLen, maxNumsLen))
 	for idx := 0; idx < len(nums); idx++ {
 		nums[idx] = helpers.RandIntInRange(minNumValue, maxNumValue)
@@ -46,5 +46,5 @@ func main() {
 	rand.Seed(time.Now().UnixNano())
 	fmt.Println("result:", findNumbers([]int{12, 345, 2, 6, 7896}))
 	fmt.Println("result:", findNumbers([]int{555, 901, 482, 1771}))
-	fmt.Println("result:", findNumbers(testcaseGenerator(10, 10, minNumValue, maxNumValue)))
+	fmt.Println("result:", findNumbers(genTestCase(10, 10, minNumValue, maxNumValue)))
 }
