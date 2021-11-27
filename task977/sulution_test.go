@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func TestFindNumbers(t *testing.T) {
+func TestSortedSquares(t *testing.T) {
 	testCases := []struct {
 		name     string
 		nums     []int
@@ -46,7 +46,7 @@ func TestFindNumbers(t *testing.T) {
 	}
 }
 
-func BenchmarkFindNumbers(b *testing.B) {
+func BenchmarkSortedSquares(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		sortedSquares(testcaseGenerator(maxNumsLen, maxNumsLen, minNumValue, maxNumValue))
 	}
